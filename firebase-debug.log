@@ -1,0 +1,36 @@
+[debug] [2017-08-23T10:56:32.933Z] ----------------------------------------------------------------------
+[debug] [2017-08-23T10:56:32.936Z] Command:       /Users/marcidenmark/.nvm/versions/node/v7.9.0/bin/node /Users/marcidenmark/.nvm/versions/node/v7.9.0/bin/firebase serve
+[debug] [2017-08-23T10:56:32.936Z] CLI Version:   3.9.2
+[debug] [2017-08-23T10:56:32.936Z] Platform:      darwin
+[debug] [2017-08-23T10:56:32.936Z] Node Version:  v7.9.0
+[debug] [2017-08-23T10:56:32.937Z] Time:          Wed Aug 23 2017 12:56:32 GMT+0200 (CEST)
+[debug] [2017-08-23T10:56:32.937Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-23T10:56:32.952Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-23T10:56:32.952Z] > authorizing via signed-in user
+[debug] [2017-08-23T10:56:32.954Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-23T10:56:32.955Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/TDlQLVorvdTWBP8AIiGdXXYemW3B3b9fct9qUQwfU2w',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Aug 23 2017 12:56:32 GMT+0200 (CEST)
+[debug] [2017-08-23T10:56:33.130Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T10:56:33.160Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/my-awesome-project-7a7af  
+ Wed Aug 23 2017 12:56:33 GMT+0200 (CEST)
+[debug] [2017-08-23T10:56:33.801Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T10:56:33.802Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/my-awesome-project-7a7af/tokens  
+ Wed Aug 23 2017 12:56:33 GMT+0200 (CEST)
+[debug] [2017-08-23T10:56:35.732Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/marcidenmark/a_IN PROGRESS/b_projects/prpl-ce-firebase'...
+[info] 
+[debug] [2017-08-23T10:56:35.736Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/my-awesome-project-7a7af  
+ Wed Aug 23 2017 12:56:35 GMT+0200 (CEST)
+[debug] [2017-08-23T10:56:37.883Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-23T10:56:37.884Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/524118061030/clients/_:getWebAppConfig  
+ Wed Aug 23 2017 12:56:37 GMT+0200 (CEST)
+[debug] [2017-08-23T10:56:39.828Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

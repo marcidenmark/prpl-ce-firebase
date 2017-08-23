@@ -6,7 +6,7 @@
  * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
- */
+
 
 class MyAppElement extends HTMLElement {
   connectedCallback() {
@@ -15,3 +15,78 @@ class MyAppElement extends HTMLElement {
 }
 
 customElements.define('my-app', MyAppElement);
+
+
+class MyAppElement extends HTMLElement {
+  connectedCallback() {
+    this.updateVisiblePage();
+  }
+
+  updateVisiblePage() {
+    if (window.location.pathname.match('^/detail')) {
+      document.body.classList.add('detail-view-active');
+      this.querySelector('detail-view').setAttribute('path', window.location.pathname);
+    } else {
+      document.body.classList.remove('detail-view-active');
+    }
+  }
+}
+*/
+
+
+class MyAppElement extends HTMLElement {
+  connectedCallback() {
+    this.addEventListener('click', this.clickHandler);
+    window.addEventListener('popstate', this.updateVisiblePage.bind(this));
+
+    this.updateVisiblePage();
+  }
+
+  updateVisiblePage() {
+        if (window.location.pathname.match('^/detail')) {
+      this.loadElement('detail-view');
+      document.body.classList.add('detail-view-active');
+      this.querySelector('detail-view').setAttribute('path', window.location.pathname);
+    } else {
+      this.loadElement('list-view');
+      document.body.classList.remove('detail-view-active');
+    }
+    /* ... */
+  }
+
+  clickHandler(event) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey) {
+      return;
+    }
+
+    let element = event.target;
+    while (element !== this) {
+      if (element.tagName === 'A') {
+        event.preventDefault();
+        window.history.pushState(null, '', element.href);
+        this.updateVisiblePage();
+        return;
+      }
+      element = element.parentNode;
+    }
+  }
+
+   constructor() {
+    super();
+    this.loadedElements = {};
+  }
+
+  loadElement(element) {
+    if (this.loadedElements[element]) {
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = `/elements/${element}.js`;
+    document.head.appendChild(script);
+    this.loadedElements[element] = script;
+  }
+}
+
+customElements.define('my-app', MyAppElement);
+
